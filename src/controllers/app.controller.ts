@@ -10,8 +10,11 @@ export class AppController {
 
     async sign(req: Request, res: Response, next: NextFunction) {
         try {
-            const user = await this.appService.createSign(req.body);
-            return res.status(201).json(user);
+            const sign = await this.appService.createSign(req.body);
+            return res.status(201).json({
+                msg: 'ok',
+                sign
+            });
         } catch (error) {
             return next(error);
         }

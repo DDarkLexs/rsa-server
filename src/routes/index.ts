@@ -1,10 +1,10 @@
 import {Router} from 'express';
-import { AppController } from '../controllers/app.controller';
+import AppRouter from './app.routes';
 
 
 const router = Router();
 
-router.use('/rsa', AppController);
+router.use('/rsa', AppRouter);
 // router.use('/clients', clientRoutes);
 // router.use('/articles', articleRoutes);
 // router.use('/orders', orderRoutes);
