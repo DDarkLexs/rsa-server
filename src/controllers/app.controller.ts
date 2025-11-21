@@ -10,9 +10,12 @@ export class AppController {
 
     async sign(req: Request, res: Response, next: NextFunction) {
         try {
-            const sign = await this.appService.createSign(req.body);
+            const data = req.body;
+              if (!data.hash) {
+                    return res.status(400).json({ error: "hash is required" });
+                }
+            const sign = await this.appService.createSign(data);
             return res.status(201).json({
-                msg: 'ok',
                 sign
             });
         } catch (error) {

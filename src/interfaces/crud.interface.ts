@@ -5,3 +5,7 @@ export interface ICrud<T> {
     update(id: string, data: Partial<T>): Promise<T>;
     delete(id: string): Promise<void>;
 }
+
+export interface IHashRequest {
+    hash: string
+}
