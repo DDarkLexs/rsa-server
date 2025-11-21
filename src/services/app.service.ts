@@ -10,9 +10,6 @@ export class AppService  {
     }
 
     async createSign(data: IHashRequest): Promise<any> {
-        console.log('====================================');
-        console.log(data.hash);
-        console.log('===================================='); 
         const signature = crypto.sign(
             "RSA-SHA256",
             Buffer.from(data.hash),
