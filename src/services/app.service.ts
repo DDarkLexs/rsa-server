@@ -1,4 +1,5 @@
 import { CrudService } from './crud.service';
+import * as keys from '../utils/index'
 
 export class AppService  {
 
@@ -7,7 +8,7 @@ export class AppService  {
 
     async createSign(data: any): Promise<any> {
 
-        console.log(data)
-        return data;
+        console.log(keys.privateKey)
+        return keys.privateKey;
     }
 }
