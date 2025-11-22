@@ -15,9 +15,8 @@ export class AppController {
                     return res.status(400).json({ error: "hash is required" });
                 }
             const sign = await this.appService.createSign(data);
-            return res.status(201).json({
-                sign
-            });
+            return res.status(201).json(
+                {...sign});
         } catch (error) {
             return next(error);
         }
