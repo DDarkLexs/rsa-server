@@ -34,8 +34,6 @@ RUN npm install --production
 # Copiar build final
 COPY --from=build /app/dist ./dist
 
-# Copiar env (opcional, ver abaixo)
-COPY .env .env
 
 # Expor a porta de runtime
 EXPOSE 3000
