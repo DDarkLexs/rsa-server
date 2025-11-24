@@ -1,5 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-export const privateKey = fs.readFileSync(path.join(__dirname, "../keys/private.pem"), "utf8");
-export const publicKey = fs.readFileSync(path.join(__dirname, "../keys/public.pem"), "utf8");
+export const privateKey = String(process.env.PRIVATE_KEY).replace(/\\n/g, "\n");
+export const publicKey = String(process.env.PUBLIC_KEY).replace(/\\n/g, "\n");

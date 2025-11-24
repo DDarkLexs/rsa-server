@@ -17,7 +17,6 @@ export class AppService  {
             Buffer.from(data.hash),
             keys.privateKey
         );
-        console.log(data)
         return {
             signature: signature.toString("base64"),
         };
