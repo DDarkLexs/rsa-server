@@ -6,5 +6,6 @@ const appController = new AppController();
 
 // Create a new user
 router.post('/sign', (req, res, next) => appController.sign(req, res, next));
+router.get('/getAll', (req, res, next) => appController.getAllRSAKey(req, res, next));
 
 export default router;

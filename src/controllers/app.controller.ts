@@ -21,16 +21,13 @@ export class AppController {
             return next(error);
         }
     }
+    async getAllRSAKey(req: Request, res: Response, next: NextFunction) {
+        try {
+            const keys = await this.appService.getAllRSAKey();
+            return res.status(201).json(keys);
+        } catch (error) {
+            return next(error);
+        }
+    }
 
-    // async login(req: Request, res: Response, next: NextFunction) {
-    //     console.log("ok")
-    //     try {
-    //         const { email, password } = req.body;
-    //         // @ts-ignore
-    //         const user = await this.userService.login(email, password);
-    //         return res.status(200).json({ user });
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // }
 }
